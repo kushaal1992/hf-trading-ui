@@ -8,6 +8,7 @@ const callPutSummationTable = (data) => {
 		tableHeaders.push(`${currVal}Put`);
 	}
 	const tableBody = new Array(25).fill({
+		id: Math.floor(Math.random * 100),
 		call: '22150Call',
 		putCallSum1: '371.8',
 		putCallSum2: '371.8',
