@@ -1,4 +1,6 @@
-const callPutSummationTable = (data) => {
+import { CONSTANTS } from '../global';
+
+export const callPutSummationTable = (data) => {
 	const { range } = data;
 	const { start } = range;
 	let currVal = start;
@@ -24,4 +26,14 @@ const callPutSummationTable = (data) => {
 	return { headers, body };
 };
 
-export default callPutSummationTable;
+export const callPutBidTable = () => {
+	const headers = CONSTANTS.callPutColumnHeaders;
+	const body = new Array(25).fill().map(() => [
+		{ key: 'id', id: Math.floor(Math.random() * 100) },
+		{ key: 'bid', bid: '587.25' },
+		{ key: 'strike', strike: '21900' },
+		{ key: 'ask', ask: '590.8' },
+		{ key: 'vol', vol: '-43.88' },
+	]);
+	return { headers, body };
+};

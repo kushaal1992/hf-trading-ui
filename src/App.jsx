@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import './App.css';
-import callPutSummationTable from './utils/formatFuturesData';
+import {
+	callPutSummationTable,
+	callPutBidTable,
+} from './utils/tableFormatData';
 import FuturesForm from './components/futuresForm';
 import BuySellOptions from './components/buySellOptions';
 import CustomTable from './components/common/customTable';
@@ -9,15 +12,8 @@ function App() {
 	const [callPutSummationData] = useState(
 		callPutSummationTable({ range: { start: 20000, end: 22000 } })
 	);
-	const rangeArr = new Array(25).fill({
-		id: Math.floor(Math.random() * 100),
-		sell: 'sell',
-		bid: '587.25',
-		strike: '21900',
-		ask: '590.8',
-		buy: 'buy',
-		vol: '-43.88',
-	});
+	const [callPutBidData] = useState(callPutBidTable());
+
 	return (
 		<div className="">
 			<div className="h-[100vh] grid grid-rows-10 gap-4">
@@ -30,75 +26,7 @@ function App() {
 							<span className="text-base text-blue-600/100 font-bold">
 								CALLS
 							</span>
-							<table className="h-full max-w-fit  divide-y divide-gray-200">
-								<thead>
-									<tr>
-										<th
-											scope="col"
-											className="max-w-fit px-2 py-1 text-start text-sm font-medium text-gray-500 uppercase"
-										>
-											Sell
-										</th>
-										<th
-											scope="col"
-											className="max-w-fit px-2 py-1 text-start text-sm font-medium text-gray-500 uppercase"
-										>
-											Bid
-										</th>
-										<th
-											scope="col"
-											className="max-w-fit px-2 py-1 text-start text-sm font-medium text-gray-500 uppercase"
-										>
-											Strike
-										</th>
-										<th
-											scope="col"
-											className="max-w-fit px-2 py-1 text-end text-sm font-medium text-gray-500 uppercase"
-										>
-											Ask
-										</th>
-										<th
-											scope="col"
-											className="max-w-fit px-2 py-1 text-end text-sm font-medium text-gray-500 uppercase"
-										>
-											Buy
-										</th>
-										<th
-											scope="col"
-											className="max-w-fit px-2 py-1 text-end text-sm font-medium text-gray-500 uppercase"
-										>
-											Vol
-										</th>
-									</tr>
-								</thead>
-								<tbody>
-									{rangeArr.map((range) => (
-										<tr
-											key={Math.floor(Math.random() * 100)}
-											className="odd:bg-white even:bg-gray-100"
-										>
-											<td className="max-w-fit px-2 py-1 whitespace-nowrap text-sm font-medium text-gray-800">
-												{range.sell}
-											</td>
-											<td className="max-w-fit px-2 py-1 whitespace-nowrap text-sm text-gray-800">
-												{range.bid}
-											</td>
-											<td className="max-w-fit px-2 py-1 whitespace-nowrap text-sm text-gray-800">
-												{range.strike}
-											</td>
-											<td className="max-w-fit px-2 py-1 whitespace-nowrap text-sm text-gray-800">
-												{range.ask}
-											</td>
-											<td className="max-w-fit px-2 py-1 whitespace-nowrap text-sm text-gray-800">
-												{range.buy}
-											</td>
-											<td className="max-w-fit px-2 py-1 whitespace-nowrap text-sm text-gray-800">
-												{range.vol}
-											</td>
-										</tr>
-									))}
-								</tbody>
-							</table>
+							<CustomTable data={callPutBidData} />
 						</div>
 						<div className="col-span-2 shadow-md shadow-slate-300 overflow-y-auto">
 							<BuySellOptions />
@@ -107,7 +35,7 @@ function App() {
 							<span className="text-base text-blue-600/100 font-bold">
 								PUTS
 							</span>
-							<table className="h-full max-w-fit divide-y divide-gray-200">
+							{/* <table className="h-full max-w-fit divide-y divide-gray-200">
 								<thead>
 									<tr>
 										<th
@@ -175,7 +103,8 @@ function App() {
 										</tr>
 									))}
 								</tbody>
-							</table>
+							</table> */}
+							<CustomTable data={callPutBidData} />
 						</div>
 						<div className="col-span-4 shadow-md shadow-slate-300 overflow-y-auto">
 							<span className="text-base text-blue-600/100 font-bold">
@@ -194,7 +123,8 @@ function App() {
 							<span className="text-base text-blue-600/100 font-bold">
 								CALLS
 							</span>
-							<table className="h-full max-w-fit  divide-y divide-gray-200">
+							<CustomTable data={callPutBidData} />
+							{/* <table className="h-full max-w-fit  divide-y divide-gray-200">
 								<thead>
 									<tr>
 										<th
@@ -262,7 +192,7 @@ function App() {
 										</tr>
 									))}
 								</tbody>
-							</table>
+							</table> */}
 						</div>
 						<div className="col-span-2 shadow-md shadow-slate-300 overflow-y-auto">
 							<BuySellOptions />
@@ -271,7 +201,7 @@ function App() {
 							<span className="text-base text-blue-600/100 font-bold">
 								PUTS
 							</span>
-							<table className="h-full max-w-fit divide-y divide-gray-200">
+							{/* <table className="h-full max-w-fit divide-y divide-gray-200">
 								<thead>
 									<tr>
 										<th
@@ -339,7 +269,8 @@ function App() {
 										</tr>
 									))}
 								</tbody>
-							</table>
+							</table> */}
+							<CustomTable data={callPutSummationData} />
 						</div>
 						<div className="col-span-4 shadow-md shadow-slate-300 overflow-y-auto">
 							<span className="text-base text-blue-600/100 font-bold">

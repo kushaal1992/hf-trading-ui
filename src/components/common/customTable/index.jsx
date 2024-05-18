@@ -21,7 +21,6 @@ function CustomTable({ data }) {
 				{body.map((content, i) => (
 					<tr key={i} className="odd:bg-white even:bg-gray-100">
 						{content.map((item) => {
-							console.log('item', item);
 							return (
 								item.key !== 'id' && (
 									<td className="max-w-fit px-2 py-1 whitespace-nowrap text-sm font-medium text-gray-800">

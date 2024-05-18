@@ -24,5 +24,6 @@ module.exports = {
 		'react/no-array-index-key': 'off',
 		'react/prop-types': 'off',
 		'dot-notation': 'off',
+		'import/prefer-default-export': 'off',
 	},
 };
