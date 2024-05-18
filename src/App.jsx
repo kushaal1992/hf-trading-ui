@@ -1,10 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './App.css';
 import callPutSummationTable from './utils/formatFuturesData';
 import FuturesForm from './components/futuresForm';
 import BuySellOptions from './components/buySellOptions';
+import CustomTable from './components/common/customTable';
 
 function App() {
+	const [callPutSummationData] = useState(
+		callPutSummationTable({ range: { start: 20000, end: 22000 } })
+	);
 	const rangeArr = new Array(25).fill({
 		id: Math.floor(Math.random() * 100),
 		sell: 'sell',
@@ -13,9 +17,6 @@ function App() {
 		ask: '590.8',
 		buy: 'buy',
 		vol: '-43.88',
-	});
-	const callPutSummationData = callPutSummationTable({
-		range: { start: 20000, end: 22000 },
 	});
 	return (
 		<div className="">
@@ -73,7 +74,7 @@ function App() {
 								<tbody>
 									{rangeArr.map((range) => (
 										<tr
-											key={range.id}
+											key={Math.floor(Math.random() * 100)}
 											className="odd:bg-white even:bg-gray-100"
 										>
 											<td className="max-w-fit px-2 py-1 whitespace-nowrap text-sm font-medium text-gray-800">
@@ -150,7 +151,7 @@ function App() {
 								<tbody>
 									{rangeArr.map((range) => (
 										<tr
-											key={range.id}
+											key={Math.floor(Math.random() * 100)}
 											className="odd:bg-white even:bg-gray-100"
 										>
 											<td className="max-w-fit px-2 py-1 whitespace-nowrap text-sm font-medium text-gray-800">
@@ -180,60 +181,7 @@ function App() {
 							<span className="text-base text-blue-600/100 font-bold">
 								Analysis
 							</span>
-							<table className="h-full max-w-fit divide-y divide-gray-200">
-								<thead>
-									<tr>
-										{callPutSummationData.tableHeaders.map((header) => (
-											<th
-												key={header}
-												scope="col"
-												className="max-w-fit px-2 py-1 text-start text-sm font-medium text-gray-500 uppercase"
-											>
-												{header}
-											</th>
-										))}{' '}
-									</tr>
-								</thead>
-								<tbody>
-									{callPutSummationData.tableBody.map((body) => (
-										<tr key={body.id} className="odd:bg-white even:bg-gray-100">
-											<td className="max-w-fit px-2 py-1 whitespace-nowrap text-sm font-medium text-gray-800">
-												{body.call}
-											</td>
-											<td className="max-w-fit px-2 py-1 whitespace-nowrap text-sm text-gray-800">
-												{body.putCallSum1}
-											</td>
-											<td className="max-w-fit px-2 py-1 whitespace-nowrap text-sm text-gray-800">
-												{body.putCallSum2}
-											</td>
-											<td className="max-w-fit px-2 py-1 whitespace-nowrap text-sm text-gray-800">
-												{body.putCallSum3}
-											</td>
-											<td className="max-w-fit px-2 py-1 whitespace-nowrap text-sm text-gray-800">
-												{body.putCallSum4}
-											</td>
-											<td className="max-w-fit px-2 py-1 whitespace-nowrap text-sm text-gray-800">
-												{body.putCallSum5}
-											</td>
-											<td className="max-w-fit px-2 py-1 whitespace-nowrap text-sm text-gray-800">
-												{body.putCallSum6}
-											</td>
-											<td className="max-w-fit px-2 py-1 whitespace-nowrap text-sm text-gray-800">
-												{body.putCallSum7}
-											</td>
-											<td className="max-w-fit px-2 py-1 whitespace-nowrap text-sm text-gray-800">
-												{body.putCallSum8}
-											</td>
-											<td className="max-w-fit px-2 py-1 whitespace-nowrap text-sm text-gray-800">
-												{body.putCallSum9}
-											</td>
-											<td className="max-w-fit px-2 py-1 whitespace-nowrap text-sm text-gray-800">
-												{body.putCallSum10}
-											</td>
-										</tr>
-									))}
-								</tbody>
-							</table>
+							<CustomTable data={callPutSummationData} />
 						</div>
 					</div>
 				</div>
@@ -290,7 +238,7 @@ function App() {
 								<tbody>
 									{rangeArr.map((range) => (
 										<tr
-											key={range.id}
+											key={Math.floor(Math.random() * 100)}
 											className="odd:bg-white even:bg-gray-100"
 										>
 											<td className="max-w-fit px-2 py-1 whitespace-nowrap text-sm font-medium text-gray-800">
@@ -367,7 +315,7 @@ function App() {
 								<tbody>
 									{rangeArr.map((range) => (
 										<tr
-											key={range.id}
+											key={Math.floor(Math.random() * 100)}
 											className="odd:bg-white even:bg-gray-100"
 										>
 											<td className="max-w-fit px-2 py-1 whitespace-nowrap text-sm font-medium text-gray-800">
@@ -397,59 +345,7 @@ function App() {
 							<span className="text-base text-blue-600/100 font-bold">
 								Analysis
 							</span>
-							<table className="h-full max-w-fit divide-y divide-gray-200">
-								<thead>
-									<tr>
-										{callPutSummationData.tableHeaders.map((header) => (
-											<th
-												scope="col"
-												className="max-w-fit px-2 py-1 text-start text-sm font-medium text-gray-500 uppercase"
-											>
-												{header}
-											</th>
-										))}
-									</tr>
-								</thead>
-								<tbody>
-									{callPutSummationData.tableBody.map((body) => (
-										<tr key={body.id} className="odd:bg-white even:bg-gray-100">
-											<td className="max-w-fit px-2 py-1 whitespace-nowrap text-sm font-medium text-gray-800">
-												{body.call}
-											</td>
-											<td className="max-w-fit px-2 py-1 whitespace-nowrap text-sm text-gray-800">
-												{body.putCallSum1}
-											</td>
-											<td className="max-w-fit px-2 py-1 whitespace-nowrap text-sm text-gray-800">
-												{body.putCallSum2}
-											</td>
-											<td className="max-w-fit px-2 py-1 whitespace-nowrap text-sm text-gray-800">
-												{body.putCallSum3}
-											</td>
-											<td className="max-w-fit px-2 py-1 whitespace-nowrap text-sm text-gray-800">
-												{body.putCallSum4}
-											</td>
-											<td className="max-w-fit px-2 py-1 whitespace-nowrap text-sm text-gray-800">
-												{body.putCallSum5}
-											</td>
-											<td className="max-w-fit px-2 py-1 whitespace-nowrap text-sm text-gray-800">
-												{body.putCallSum6}
-											</td>
-											<td className="max-w-fit px-2 py-1 whitespace-nowrap text-sm text-gray-800">
-												{body.putCallSum7}
-											</td>
-											<td className="max-w-fit px-2 py-1 whitespace-nowrap text-sm text-gray-800">
-												{body.putCallSum8}
-											</td>
-											<td className="max-w-fit px-2 py-1 whitespace-nowrap text-sm text-gray-800">
-												{body.putCallSum9}
-											</td>
-											<td className="max-w-fit px-2 py-1 whitespace-nowrap text-sm text-gray-800">
-												{body.putCallSum10}
-											</td>
-										</tr>
-									))}
-								</tbody>
-							</table>
+							<CustomTable data={callPutSummationData} />
 						</div>
 					</div>
 				</div>

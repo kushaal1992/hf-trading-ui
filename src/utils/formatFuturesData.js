@@ -2,29 +2,26 @@ const callPutSummationTable = (data) => {
 	const { range } = data;
 	const { start } = range;
 	let currVal = start;
-	const tableHeaders = ['index', `${currVal}Put`];
+	const headers = ['index', `${currVal}Put`];
 	while (currVal !== range.end) {
 		currVal += 50;
-		tableHeaders.push(`${currVal}Put`);
+		headers.push(`${currVal}Put`);
 	}
-	const tableBody = new Array(25).fill({
-		id: Math.floor(Math.random * 100),
-		call: '22150Call',
-		putCallSum1: '371.8',
-		putCallSum2: '371.8',
-		putCallSum3: '371.8',
-		putCallSum4: '371.8',
-		putCallSum5: '371.8',
-		putCallSum6: '371.8',
-		putCallSum7: '371.8',
-		putCallSum8: '371.8',
-		putCallSum9: '371.8',
-		putCallSum10: '371.8',
-	});
-	return { tableHeaders, tableBody };
+	const body = new Array(25).fill().map(() => [
+		{ key: 'id', id: Math.floor(Math.random() * 100) },
+		{ key: 'call', call: '22150Call' },
+		{ key: 'putCallSum1', putCallSum1: '371.8' },
+		{ key: 'putCallSum2', putCallSum2: '371.8' },
+		{ key: 'putCallSum3', putCallSum3: '371.8' },
+		{ key: 'putCallSum4', putCallSum4: '371.8' },
+		{ key: 'putCallSum5', putCallSum5: '371.8' },
+		{ key: 'putCallSum6', putCallSum6: '371.8' },
+		{ key: 'putCallSum7', putCallSum7: '371.8' },
+		{ key: 'putCallSum8', putCallSum8: '371.8' },
+		{ key: 'putCallSum9', putCallSum9: '371.8' },
+		{ key: 'putCallSum10', putCallSum10: '371.8' },
+	]);
+	return { headers, body };
 };
-
-// const result = callPutSummationTable({ range: { start: 20000, end: 22000 } });
-// console.log("result", result);
 
 export default callPutSummationTable;

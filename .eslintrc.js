@@ -22,5 +22,7 @@ module.exports = {
 	plugins: ['react'],
 	rules: {
 		'react/no-array-index-key': 'off',
+		'react/prop-types': 'off',
+		'dot-notation': 'off',
 	},
 };
