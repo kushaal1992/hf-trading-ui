@@ -1,5 +1,4 @@
 const callPutSummationTable = (data) => {
-	console.log('data', data);
 	const { range } = data;
 	const { start } = range;
 	let currVal = start;

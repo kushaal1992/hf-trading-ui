@@ -435,8 +435,6 @@ function App() {
 												{header}
 											</th>
 										))}{' '}
-										Line 19:3: JSX not allowed in files with extension '.js'
-										react/jsx-filename-extension
 									</tr>
 								</thead>
 								<tbody>
