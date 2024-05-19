@@ -6,7 +6,7 @@ function BuySellOptions() {
 	return (
 		<div className="flex flex-col justify-center items-center gap-10 p-1">
 			<span className="text-base text-blue-600/100 font-bold">Actions</span>
-			<div className="w-full flex flex-row gap-1">
+			<div className="w-full flex flex-row justify-center gap-1">
 				<div className="flex flex-col items-center gap-2">
 					<CustomInput type="text" width="w-10/12" margin="m-0" />
 
@@ -20,7 +20,7 @@ function BuySellOptions() {
 					<CustomButton type="submit" label="Buy CE" buy />
 				</div>
 			</div>
-			<div className="w-full flex flex-row gap-1">
+			<div className="w-full flex flex-row justify-center gap-1">
 				<div className="flex flex-col items-center gap-2">
 					<CustomInput type="text" width="w-10/12" margin="m-0" />
 
