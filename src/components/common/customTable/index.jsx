@@ -20,15 +20,14 @@ function CustomTable({ data }) {
 			<tbody>
 				{body.map((content, i) => (
 					<tr key={i} className="odd:bg-white even:bg-gray-100">
-						{content.map((item) => {
-							return (
+						{content.map(
+							(item) =>
 								item.key !== 'id' && (
 									<td className="max-w-fit px-2 py-1 whitespace-nowrap text-sm font-medium text-gray-800">
 										{item[item.key]}
 									</td>
 								)
-							);
-						})}
+						)}
 					</tr>
 				))}
 			</tbody>

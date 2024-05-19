@@ -25,5 +25,6 @@ module.exports = {
 		'react/prop-types': 'off',
 		'dot-notation': 'off',
 		'import/prefer-default-export': 'off',
+		// 'react/button-has-type': 'off',
 	},
 };

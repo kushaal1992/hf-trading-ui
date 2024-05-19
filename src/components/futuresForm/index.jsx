@@ -1,4 +1,5 @@
 import React from 'react';
+import CustomButton from '../common/customTable/customButton';
 
 function FuturesForm() {
 	return (
@@ -52,12 +53,13 @@ function FuturesForm() {
 						required
 					/>
 				</div>
-				<button
+				{/* <button
 					type="button"
 					className="py-0 text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 font-medium rounded-lg text-sm px-5 .5 me-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700"
 				>
 					Subscribe
-				</button>
+				</button> */}
+				<CustomButton label="Subscribe" type="button" />
 			</div>
 			<div className="flex flex-col gap-2">
 				<div className="flex flex-col gap-2">
@@ -71,12 +73,7 @@ function FuturesForm() {
 							required
 						/>
 					</div>
-					<button
-						type="button"
-						className="py-0 text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 font-medium rounded-lg text-sm px-5 me-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700"
-					>
-						Subscribe
-					</button>
+					<CustomButton label="Subscribe" type="button" />
 					<table className="h-full w-full divide-y divide-gray-200">
 						<thead>
 							<tr>
@@ -118,12 +115,7 @@ function FuturesForm() {
 							placeholder="21000"
 							required
 						/>
-						<button
-							type="button"
-							className="py-0 w-full focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 .5 me-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800"
-						>
-							Buy Futures
-						</button>
+						<CustomButton label="Buy Futures" type="submit" buy />
 					</div>
 					<div>
 						<input
@@ -138,12 +130,7 @@ function FuturesForm() {
 							placeholder="21000"
 							required
 						/>
-						<button
-							type="button"
-							className="w-full py-0 focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 me-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900"
-						>
-							Sell Futures
-						</button>
+						<CustomButton label="Sell Futures" type="submit" />
 					</div>
 					<div>
 						<input
@@ -152,13 +139,7 @@ function FuturesForm() {
 							placeholder="21000"
 							required
 						/>
-
-						<button
-							type="button"
-							className="w-full py-0 focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 me-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900"
-						>
-							Cancel FUT/OPT Order
-						</button>
+						<CustomButton label="Cancel FUT/OPT Order" type="submit" />
 					</div>
 				</div>
 			</div>
