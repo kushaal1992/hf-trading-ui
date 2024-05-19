@@ -24,10 +24,10 @@ function ExpiryLayout() {
 				</div>
 				<div className="col-span-6 shadow-md shadow-slate-300 overflow-y-auto">
 					<div className="flex flex-col items-center justify-center">
-						<div className="w-full overflow-x-hidden">
+						<div className="w-full overflow-x-hidden shadow-sm shadow-slate-300">
 							<BuySellOptions />
 						</div>
-						<div className="w-full overflow-x-auto">
+						<div className="w-full overflow-x-auto shadow-sm shadow-slate-300">
 							<span className="text-base text-blue-600/100 font-bold">
 								Analysis
 							</span>
