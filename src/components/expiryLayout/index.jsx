@@ -14,7 +14,7 @@ function ExpiryLayout() {
 	const [callPutBidData] = useState(callPutBidTable());
 
 	return (
-		<div className="col-span-5">
+		<div className="row-span-5">
 			<div className="h-full grid grid-cols-12 gap-3 text-center border border-inherit">
 				<div className="col-span-2 shadow-md shadow-slate-300 overflow-y-auto">
 					<FuturesForm />
