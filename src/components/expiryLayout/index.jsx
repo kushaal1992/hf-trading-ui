@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
+import {
+	faChevronRight,
+	faChevronLeft,
+} from '@fortawesome/free-solid-svg-icons';
 import {
 	callPutBidTable,
 	callPutSummationTable,
@@ -17,6 +20,7 @@ function ExpiryLayout({ parentCallback }) {
 
 	const toggleSidebar = () => {
 		const currVal = !viewSidebar;
+		// setViewSidebar((prev) => !prev);
 		setViewSidebar(currVal);
 		parentCallback(currVal);
 	};
@@ -28,14 +32,14 @@ function ExpiryLayout({ parentCallback }) {
 				</div> */}
 			<div className="col-span-3 shadow-md shadow-slate-300 overflow-y-auto">
 				<FontAwesomeIcon
-					icon={faChevronRight}
+					icon={viewSidebar ? faChevronLeft : faChevronRight}
 					onClick={toggleSidebar}
 					className="absolute left-2 top-1.5"
 				/>
 				<span className="text-base text-blue-600/100 font-bold">CALLS</span>
 				<CustomTable data={callPutBidData} />
 			</div>
-			<div className="col-span-6 shadow-md shadow-slate-300 overflow-y-auto">
+			<div className="col-span-6 shadow-md shadow-slate-300 overflow-y-auto p-1">
 				<div className="flex flex-col items-center justify-center">
 					<div className="w-full overflow-x-hidden shadow-sm shadow-slate-300">
 						<BuySellOptions />

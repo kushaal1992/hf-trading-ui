@@ -6,7 +6,7 @@ function FuturesForm() {
 	return (
 		<div className="flex flex-col gap-2">
 			<div className="flex flex-col gap-2">
-				<span className="text-base text-blue-600/100 font-bold">
+				<span className="text-center text-base text-blue-600/100 font-bold">
 					Strike Range
 				</span>
 				<div>

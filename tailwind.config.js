@@ -14,5 +14,12 @@ module.exports = {
 			'5xl': '2rem',
 		},
 	},
+	safelist: [
+		'col-span-1',
+		'col-span-5',
+		'col-span-6',
+		'grid-cols-11',
+		'grid-cols-12',
+	],
 	plugins: [],
 };

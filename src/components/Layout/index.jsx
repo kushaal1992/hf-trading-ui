@@ -10,7 +10,7 @@ function Layout() {
 	const handleParentCallback = (valueFromExpiryLayout) => {
 		setViewSidebar(valueFromExpiryLayout);
 		if (valueFromExpiryLayout) {
-			setGridCols(12);
+			setGridCols(11);
 			setExpiryLayoutCols(5);
 			return;
 		}
@@ -22,7 +22,7 @@ function Layout() {
 		<div className={`h-[100vh] grid grid-cols-${gridCols} gap-1`}>
 			{viewSidebar && (
 				<div
-					className="col-span-1"
+					className="col-span-1 p-1"
 					// onMouseEnter={() => setViewSidebar(true)}
 					// onMouseLeave={() => setViewSidebar(false)}
 				>
@@ -32,7 +32,7 @@ function Layout() {
 			<div className={`col-span-${expiryLayoutCols}`}>
 				<ExpiryLayout parentCallback={handleParentCallback} />
 			</div>
-			<div className="col-span-6">
+			<div className={`col-span-${expiryLayoutCols}`}>
 				<ExpiryLayout parentCallback={handleParentCallback} />
 			</div>
 		</div>
