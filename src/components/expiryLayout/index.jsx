@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
 	faChevronRight,
@@ -17,25 +17,28 @@ function ExpiryLayout({ parentCallback }) {
 	);
 	const [callPutBidData] = useState(callPutBidTable());
 	const [viewSidebar, setViewSidebar] = useState(false);
+	const [toggleIcon, setToggleIcon] = useState(faChevronLeft);
 
 	const toggleSidebar = () => {
-		const currVal = !viewSidebar;
-		// setViewSidebar((prev) => !prev);
-		setViewSidebar(currVal);
-		parentCallback(currVal);
+		const currSidebarVal = !viewSidebar;
+		setViewSidebar(currSidebarVal);
+		parentCallback(currSidebarVal);
 	};
+
+	useEffect(() => {
+		setToggleIcon(viewSidebar ? faChevronLeft : faChevronRight);
+	}, [viewSidebar]);
 
 	return (
 		<div className="h-full grid grid-cols-12 gap-3 text-center border border-inherit">
-			{/* <div className="col-span-2 shadow-md shadow-slate-300 overflow-y-auto">
-					<FuturesForm />
-				</div> */}
 			<div className="col-span-3 shadow-md shadow-slate-300 overflow-y-auto">
-				<FontAwesomeIcon
-					icon={viewSidebar ? faChevronLeft : faChevronRight}
-					onClick={toggleSidebar}
-					className="absolute left-2 top-1.5"
-				/>
+				{toggleIcon && (
+					<FontAwesomeIcon
+						icon={toggleIcon}
+						onClick={toggleSidebar}
+						className="absolute left-2 top-1.5"
+					/>
+				)}
 				<span className="text-base text-blue-600/100 font-bold">CALLS</span>
 				<CustomTable data={callPutBidData} />
 			</div>
