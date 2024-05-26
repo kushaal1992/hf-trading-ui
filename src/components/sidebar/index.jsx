@@ -3,7 +3,8 @@ import FuturesForm from '../futuresForm';
 
 function Sidebar() {
 	return (
-		<div className="transition-all">
+		<div className="flex flex-col gap-2 transition-all">
+			<FuturesForm />
 			<FuturesForm />
 		</div>
 	);

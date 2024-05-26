@@ -6,31 +6,10 @@ function FuturesForm() {
 	return (
 		<div className="flex flex-col gap-2">
 			<div className="flex flex-col gap-2">
-				<span className="text-center text-base text-blue-600/100 font-bold">
-					Strike Range
-				</span>
-				<div>
-					<CustomInput id="from_range" type="text" placeholder="00000" />
-				</div>
-				<div>
-					<CustomInput id="to_range" type="text" placeholder="00000" />
-				</div>
-				<div>
-					<span
-						htmlFor="expiry"
-						className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-					>
-						To
-					</span>
-
-					<CustomInput id="expiry" type="date" />
-				</div>
-
-				<CustomButton label="Subscribe" type="button" />
-			</div>
-			<div className="flex flex-col gap-2">
 				<div className="flex flex-col gap-2">
-					<span>Futures</span>
+					<span className="text-center text-base text-blue-600/100 font-bold">
+						Futures
+					</span>
 					<div>
 						<CustomInput id="future_date" type="date" />
 					</div>

@@ -30,10 +30,10 @@ function Layout() {
 				</div>
 			)}
 			<div className={`col-span-${expiryLayoutCols}`}>
-				<ExpiryLayout parentCallback={handleParentCallback} />
+				<ExpiryLayout parentCallback={handleParentCallback} expiryFormNo={1} />
 			</div>
 			<div className={`col-span-${expiryLayoutCols}`}>
-				<ExpiryLayout parentCallback={handleParentCallback} />
+				<ExpiryLayout parentCallback={handleParentCallback} expiryFormNo={2} />
 			</div>
 		</div>
 	);
